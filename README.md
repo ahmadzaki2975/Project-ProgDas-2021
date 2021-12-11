@@ -15,7 +15,7 @@ Azfar Azdi Arfakhsyad (TE 21)
 
 Difta Fitrahul Qihaj (TI 21)
 
-Mas Oki (TE 18)
+Mas Oki Dwi Cahyono (TE 18)
 
 ## How To Use
 
