@@ -21,6 +21,8 @@ Oki Dwi Cahyono (TE 18)
 
 Run mainapp.exe
 
+if mainapp.exe is blocked by antivirus, create mainapp.exe using powershell.
+
 ## Contents
 book.cpp
 
