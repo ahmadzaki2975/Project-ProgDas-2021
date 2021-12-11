@@ -21,7 +21,7 @@ Oki Dwi Cahyono (TE 18)
 
 Run mainapp.exe
 
-if mainapp.exe is blocked by antivirus, create mainapp.exe using powershell.
+if mainapp.exe is blocked by antivirus, create mainapp.exe using powershell. follow this [Youtube Video](https://youtu.be/pZvJwzvwFFk?t=198) for more information.
 
 ## Contents
 book.cpp
