@@ -25,26 +25,43 @@ class Pengembalian{
 };
 
     void addDataPengembalian(){
-        string inputJudul, inputPenulis, inputNama, inputAlamat;
-        string inputNo_hp;
 
-        cout << "INPUT DATA BUKU" << endl;
+    string inputJudul, inputPenulis, inputNama, inputAlamat, inputNo_hp, baris;
+    ifstream inFile;
+    inFile.open("Data Peminjaman.txt");
+
+        cout << "INPUT DATA BUKU"   << endl;
         cout << "Judul\t\t: ";
         getline(cin, inputJudul);
         cout << "Penulis\t\t: ";
         getline(cin, inputPenulis);
         cout << "Nama peminjam\t: ";
         getline(cin, inputNama);
+
+        while(!inFile.eof()){
+            getline(inFile, baris);
+
+            if(baris.find(inputNama)==18){
+                break;
+            }
+            else if(inFile.eof() && baris.find(inputNama)!=18){
+                cout << "=============================" << endl;
+                cout << "Data peminjam tidak ditemukan" << endl;
+                system("pause");
+                exit(0);
+            }
+        }
+
         cout << "Alamat\t\t: ";
         getline(cin, inputAlamat);
         cout << "Nomor hape\t: ";
         cin >> inputNo_hp;
+        cout << " ";
 
-    Pengembalian p1 = Pengembalian(inputJudul, inputPenulis, inputNama, inputAlamat, inputNo_hp);
+Pengembalian p1 = Pengembalian(inputJudul, inputPenulis, inputNama, inputAlamat, inputNo_hp);
 
     ofstream outFile;
-    outFile.open("DataPengembalian.txt", ios::app);
-
+    outFile.open("Data Pengembalian.txt", ios::app);
     if(outFile.is_open()){
         outFile << "Judul\t\t: " << p1.title << endl;
         outFile << "Penulis\t\t: " << p1.penulis << endl;
@@ -52,14 +69,14 @@ class Pengembalian{
         outFile << "Alamat\t\t: " << p1.alamat << endl;
         outFile << "Nomor hape\t: " << p1.no_hp << endl;
         outFile << " " << endl;
+        }
 
-    }
 }
 
     void displayDataPengembalian(){
         ifstream inFile;
         string lines;
-        inFile.open("DataPengembalian.txt");
+        inFile.open("Data Pengembalian.txt");
         cout << " " << endl;
         cout << "Data Pengembalian" << endl;
         cout << "=========================" << endl;
@@ -77,13 +94,13 @@ class Pengembalian{
 	cout << "Masukkan judul buku : ";
 	getline(cin, judul);
 	ifstream myfile;
-	myfile.open("DataPengembalian.txt");
+	myfile.open("Data Pengembalian.txt");
 	ofstream newfile;
 	newfile.open("new.txt", ios::app);
 
 	while(getline(myfile, baru)){
-    size_t foundInfo = baru.find(judul);
-    if(foundInfo != string::npos){
+    size_t foundWord = baru.find(judul);
+    if(foundWord != string::npos){
         for(int a=0; a<6; a++){
 				getline(myfile, baru);
 			}
@@ -95,17 +112,16 @@ class Pengembalian{
 	myfile.close();
 	newfile.close();
 
-	remove("DataPengembalian.txt");
-	rename("new.txt","DataPengembalian.txt");
+	remove("Data Pengembalian.txt");
+	rename("new.txt","Data Pengembalian.txt");
     }
 
     void clearDataPengembalian(){
     ofstream outFile;
-    outFile.open("DataPengembalian.txt", ios::trunc);
+    outFile.open("Data Pengembalian.txt", ios::trunc);
     outFile.close();
     cout << "\nSemua data pengembalian telah terhapus\n\n";
     }
 /*int main(){
-
     return 0;
 }*/
