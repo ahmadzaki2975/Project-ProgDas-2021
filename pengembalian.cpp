@@ -37,7 +37,7 @@ class Pengembalian{
         getline(cin, inputPenulis);
         cout << "Nama peminjam\t: ";
         getline(cin, inputNama);
-
+	if(inFile.is_open()){
         while(!inFile.eof()){
             getline(inFile, baris);
 
@@ -51,7 +51,9 @@ class Pengembalian{
                 exit(0);
             }
         }
-
+	} else
+	cout<<"File belum tersedia "<<endl;
+	exit(0);
         cout << "Alamat\t\t: ";
         getline(cin, inputAlamat);
         cout << "Nomor hape\t: ";
