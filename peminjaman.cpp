@@ -43,17 +43,21 @@ void Pinjam::setData(){
 	getline(cin, kela);
 	cout<<"Masukkan judul buku : ";
 	getline(cin, jud);
-	while(!data_buku.eof()){
-		getline(data_buku, baru2);
-		if(baru2.find(jud)==8){
-			break;
+	if(data_buku.is_open()){
+		while(!data_buku.eof()){
+			getline(data_buku, baru2);
+			if(baru2.find(jud)==8){
+				break;
+			}
+			else if( data_buku.eof() && baru2.find(jud)!=8){
+				cout<<"Data tidak ditemukan"<<endl;
+				system("pause");
+				exit(0);
+			}
 		}
-		else if( data_buku.eof() && baru2.find(jud)!=8){
-			cout<<"Data tidak ditemukan"<<endl;
-			system("pause");
-			exit(0);
-		}
-	}
+	} else
+	cout<<"File belum tersedia "<<endl;
+	exit(0);
 	cout<<"Masukkan penulis buku : ";
 	getline(cin, pen);
 	
