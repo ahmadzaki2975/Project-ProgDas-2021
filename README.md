@@ -19,7 +19,7 @@ Oki Dwi Cahyono (TE 18)
 
 ## How To Use
 
-run install.bat, then run mainapp.exe
+run install.bat, then run mainapp.exe (you can find those two file inside the same directory as this file) 
 
 ## Warning
 If install.bat doesn't work or is blocked by antivirus, create mainapp.exe using powershell. follow this [Youtube Video](https://youtu.be/pZvJwzvwFFk?t=198) for more information.
