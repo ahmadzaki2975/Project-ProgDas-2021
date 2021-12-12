@@ -53,6 +53,7 @@ class Pengembalian{
         }
 	} else
 	cout<<"File belum tersedia "<<endl;
+	system("pause");
 	exit(0);
         cout << "Alamat\t\t: ";
         getline(cin, inputAlamat);
