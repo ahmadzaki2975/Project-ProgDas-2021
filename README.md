@@ -19,7 +19,7 @@ Oki Dwi Cahyono (TE 18)
 
 ## How To Use
 
-Run mainapp.exe
+run install.bat, then run mainapp.exe
 
 ## Warning
 If mainapp.exe is blocked by antivirus, create mainapp.exe using powershell. follow this [Youtube Video](https://youtu.be/pZvJwzvwFFk?t=198) for more information.
