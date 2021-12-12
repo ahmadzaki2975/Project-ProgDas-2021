@@ -55,10 +55,11 @@ void Pinjam::setData(){
 				exit(0);
 			}
 		}
-	} else
+	} else{
 	cout<<"File belum tersedia "<<endl;
 	system("pause");
 	exit(0);
+	}
 	cout<<"Masukkan penulis buku : ";
 	getline(cin, pen);
 	
