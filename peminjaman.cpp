@@ -158,8 +158,10 @@ void Pinjam::deleteData(){
 }
 
 void Pinjam::updateData(){
+	ifstream data_buku2;
+	data_buku2.open("List Buku.txt");
 	string nama1, baru1;
-	string jud1, pen1, nam1, ala1, no1, kela1;
+	string jud1, pen1, nam1, ala1, no1, kela1, baru3;
 	cout<<"===================================================\n";
 	cout<<"Note : Nama harus sesuai data(Kapital harus sesuai)\n";
 	cout<<"Ketidaksesuaian input, data tidak akan di update\n";
@@ -184,6 +186,23 @@ void Pinjam::updateData(){
 			getline(cin, kela1);
 			cout<<"Masukkan judul buku baru : ";
 			getline(cin, jud1);
+			if(data_buku2.is_open()){
+				while(!data_buku2.eof()){
+					getline(data_buku2, baru3);
+					if(baru3.find(jud1)==8){
+						break;
+					}
+					else if( data_buku2.eof() && baru3.find(jud1)!=8){
+							cout<<"Data tidak ditemukan"<<endl;
+							system("pause");
+							exit(0);
+					}
+				}
+			} else{
+			cout<<"File belum tersedia "<<endl;
+			system("pause");
+			exit(0);
+			}
 			cout<<"Masukkan penulis buku baru : ";
 			getline(cin, pen1);
 			newfile1<<"Nama peminjam   : "<<nam1<<"\n";
