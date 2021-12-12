@@ -55,7 +55,7 @@ void addBook(){
         outFile << "Penulis\t\t:" << buku1.penulis << endl;
         outFile << "Tipe\t\t:" << buku1.tipe << endl;
         outFile << "Penerbit\t:" << buku1.penerbit << endl;
-        outFile << "TahunTerbit\t:" << buku1.tahunTerbit << endl;
+        outFile << "TahunTerbit\t:" << buku1.tahunTerbit << endl << endl;
         outFile.close();
     }
     else 
@@ -120,13 +120,13 @@ void editData(){
     inFile.open("List Buku.txt"); 
 }
 
-
 void clearData(){
     ofstream outFile;
     outFile.open("List Buku.txt", ios::trunc);
     outFile.close();
     cout << "\nSemua data buku telah terhapus\n\n";
 }
+
 //UJI COBA
 //int main(){
     //addBook();
