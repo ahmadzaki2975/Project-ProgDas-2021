@@ -51,10 +51,11 @@ class Pengembalian{
                 exit(0);
             }
         }
-	} else
+	} else{
 	cout<<"File belum tersedia "<<endl;
 	system("pause");
 	exit(0);
+	}
         cout << "Alamat\t\t: ";
         getline(cin, inputAlamat);
         cout << "Nomor hape\t: ";
